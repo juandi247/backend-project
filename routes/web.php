@@ -14,5 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'HOME PAGE';
 });
+
+Route::get('producto', function () {
+    return "LISTADO DE TODOS LOS PRODUCTOS";
+});
+
+Route::get('producto/create', function () {
+    return "AQUI VA EL FORMULARIO DE LA CREACION DE PRODUCTOS";
+});
+
+
+Route::get('producto/{id}', function ($id) {
+    return "el nombre del producto es $id";
+});
+
+Route::get('producto/{id}/{categoria}', function ($id, $categoria) {
+    return "el nombre del producto es $id con la categoria $categoria";
+});
+
+
