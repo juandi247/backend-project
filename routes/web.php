@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,23 +15,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'HOME PAGE';
+    return view("Welcome");
 });
 
-Route::get('producto', function () {
-    return "LISTADO DE TODOS LOS PRODUCTOS";
-});
 
-Route::get('producto/create', function () {
+
+
+Route::get('productos',[ProductController::class,"listProducts"]);
+
+
+
+Route::get('productos/create', function () {
     return "AQUI VA EL FORMULARIO DE LA CREACION DE PRODUCTOS";
 });
 
 
-Route::get('producto/{id}', function ($id) {
+Route::get('productos/{id}', function ($id) {
     return "el nombre del producto es $id";
 });
 
-Route::get('producto/{id}/{categoria}', function ($id, $categoria) {
+Route::get('productos/{id}/{categoria}', function ($id, $categoria) {
     return "el nombre del producto es $id con la categoria $categoria";
 });
 
