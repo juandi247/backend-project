@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('productos',[ProductController::class,"listProducts"]);
 
-
+Route::get('detalle',[ProductController::class,"detail"]);
 
 Route::get('productos/create', function () {
     return "AQUI VA EL FORMULARIO DE LA CREACION DE PRODUCTOS";
